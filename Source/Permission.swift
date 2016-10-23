@@ -119,11 +119,11 @@ open class Permission: NSObject {
         case .bluetooth:         return statusBluetooth
 //        case .motion:            return statusMotion
 //        case .speechRecognizer:
-            if #available(iOS 10.0, *) {
-                return statusSpeechRecognizer
-            } else {
-                return PermissionStatus.notDetermined
-            }
+//            if #available(iOS 10.0, *) {
+//                return statusSpeechRecognizer
+//            } else {
+//                return PermissionStatus.notDetermined
+//            }
         case .mediaLibrary:      return statusMediaLibrary
         }
     }
