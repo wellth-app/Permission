@@ -57,11 +57,11 @@ open class Permission: NSObject {
     open static let bluetooth = Permission(type: .bluetooth)
     
     /// The permission to access the user's motion.
-    open static let motion = Permission(type: .motion)
+//    open static let motion = Permission(type: .motion)
     
     /// The permission to access the user's SpeechRecognizer.
-    @available(iOS 10.0, *)
-    open static let speechRecognizer = Permission(type: .speechRecognizer)
+//    @available(iOS 10.0, *)
+//    open static let speechRecognizer = Permission(type: .speechRecognizer)
     
     /// The permission to access the user's MediaLibrary.
     @available(iOS 9.3, *)
@@ -117,8 +117,8 @@ open class Permission: NSObject {
         case .reminders:         return statusReminders
         case .events:            return statusEvents
         case .bluetooth:         return statusBluetooth
-        case .motion:            return statusMotion
-        case .speechRecognizer:
+//        case .motion:            return statusMotion
+//        case .speechRecognizer:
             if #available(iOS 10.0, *) {
                 return statusSpeechRecognizer
             } else {
@@ -200,13 +200,13 @@ open class Permission: NSObject {
         case .reminders:         requestReminders(callback)
         case .events:            requestEvents(callback)
         case .bluetooth:         requestBluetooth(self.callback)
-        case .motion:            requestMotion(self.callback)
-        case .speechRecognizer:
-            if #available(iOS 10.0, *) {
-                requestSpeechRecognizer(callback)
-            } else {
-                fatalError("Speech recognizer is only available in iOS 10+")
-            }
+//        case .motion:            requestMotion(self.callback)
+//        case .speechRecognizer:
+//            if #available(iOS 10.0, *) {
+//                requestSpeechRecognizer(callback)
+//            } else {
+//                fatalError("Speech recognizer is only available in iOS 10+")
+//            }
         case .mediaLibrary:      requestMediaLibrary(callback)
         }
     }
